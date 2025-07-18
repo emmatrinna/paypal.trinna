@@ -128,13 +128,16 @@ select {
     -moz-appearance: none;
     width: 120px;
     height: 40px;
-    padding: 0 10px;
+    padding: 0 30px 0 10px; /* Adjusted padding to accommodate arrow */
     border: 2px solid #000;
     border-radius: 20px;
     background: none;
     font-size: 16px;
     cursor: pointer;
     outline: none;
+    background-image: url('data:image/svg+xml;utf8,<svg xmlns="http://www.w3.org/2000/svg" width="12" height="12" viewBox="0 0 12 12"><path d="M2 4l4 4 4-4z" fill="%23000"/></svg>');
+    background-repeat: no-repeat;
+    background-position: right 10px center;
 }
 
 select::-ms-expand {
@@ -144,17 +147,6 @@ select::-ms-expand {
 select:focus {
     border-color: #000;
 }
-
-/* Arrow styling (optional, using a pseudo-element) */
-select::after {
-    content: '▼';
-    position: absolute;
-    top: 50%;
-    right: 10px;
-    transform: translateY(-50%);
-    pointer-events: none;
-}
-
 /* === Larger Screens === */
 @media (min-width: 768px) {
   .back-arrow { font-size: 24px; }
