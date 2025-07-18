@@ -117,6 +117,44 @@ body {
   cursor: pointer;
 }
 
+.dropdown {
+    position: relative;
+    display: inline-block;
+}
+
+select {
+    appearance: none;
+    -webkit-appearance: none;
+    -moz-appearance: none;
+    width: 120px;
+    height: 40px;
+    padding: 0 10px;
+    border: 2px solid #000;
+    border-radius: 20px;
+    background: none;
+    font-size: 16px;
+    cursor: pointer;
+    outline: none;
+}
+
+select::-ms-expand {
+    display: none;
+}
+
+select:focus {
+    border-color: #000;
+}
+
+/* Arrow styling (optional, using a pseudo-element) */
+select::after {
+    content: '▼';
+    position: absolute;
+    top: 50%;
+    right: 10px;
+    transform: translateY(-50%);
+    pointer-events: none;
+}
+
 /* === Larger Screens === */
 @media (min-width: 768px) {
   .back-arrow { font-size: 24px; }
